@@ -11,7 +11,7 @@ function Home() {
       try {
         const response = await api.get("/pets");
 
-        setPets(response.data.pets); // Atualiza o estado com os pets
+        setPets(response.data.pets);
       } catch (error) {
         console.error("Erro ao buscar pets:", error);
       }
@@ -26,7 +26,8 @@ function Home() {
         <p>Veja os detalhes de cada pet e conheça seus tutores.</p>
       </div>
       <div className={styles.pet_container}>
-        {pets.length > 0 &&
+        {pets &&
+          pets.length > 0 &&
           pets.map((pet) => (
             <div key={pet.id} className={styles.pet_card}>
               <div
@@ -44,7 +45,7 @@ function Home() {
               )}
             </div>
           ))}
-        {pets.length === 0 && <p>Ainda não há pets</p>}
+        {!pets || (pets.length === 0 && <p>Ainda não há pets</p>)}
       </div>
     </section>
   );
