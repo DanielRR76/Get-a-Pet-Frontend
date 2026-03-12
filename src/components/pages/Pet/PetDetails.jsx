@@ -14,7 +14,6 @@ function PetDetails() {
     async function fetchPet() {
       try {
         const response = await api.get(`/pets/${id}`);
-        response.data.pet.images = JSON.parse(response.data.pet.images);
 
         setPet(response.data.pet);
       } catch (error) {
