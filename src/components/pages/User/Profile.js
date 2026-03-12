@@ -21,7 +21,7 @@ function Profile() {
         },
       })
       .then((response) => {
-        setUser(response.data);
+        setUser(response.data.user);
       });
   }, [token]);
 
@@ -43,7 +43,7 @@ function Profile() {
     Object.keys(user).forEach((key) => formData.append(key, user[key]));
 
     const data = await api
-      .patch(`/users/edit/${user.id}`, formData, {
+      .patch(`/users/edit`, formData, {
         headers: {
           Authorization: `Bearer ${JSON.parse(token)}`,
           "Content-Type": "multipart/form-data",
