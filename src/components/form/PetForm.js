@@ -40,7 +40,7 @@ function PetForm({ handleSubmit, colorpets, petData, btnText }) {
               />
             ))
           : pet.images &&
-            JSON.parse(pet.images).map((image, index) => (
+            pet.images.map((image, index) => (
               <img
                 src={`${image}`}
                 alt={pet.name}

@@ -20,10 +20,6 @@ function MyPets() {
         Authorization: `Bearer ${JSON.parse(token)}`,
       },
     });
-    response.data.pets.map((pet) => {
-      pet.images = JSON.parse(pet.images);
-      return pet;
-    });
     setPets(response.data.pets);
   };
 
@@ -74,7 +70,8 @@ function MyPets() {
         <Link to="/pet/add">Cadastrar Pet</Link>
       </div>
       <div className={styles.petlist_container}>
-        {pets.length > 0 &&
+        {pets &&
+          pets.length > 0 &&
           pets.map((pet) => (
             <div className={styles.petlist_row} key={pet.id}>
               <RoundedImage
@@ -104,7 +101,7 @@ function MyPets() {
               </div>
             </div>
           ))}
-        {pets.length === 0 && <p>Voce ainda nao possui pets</p>}
+        {!pets || pets.length === 0 ? <p>Voce ainda nao possui pets</p> : null}
       </div>
     </section>
   );
