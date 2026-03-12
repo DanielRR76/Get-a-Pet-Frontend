@@ -10,10 +10,6 @@ function Home() {
     async function fetchPets() {
       try {
         const response = await api.get("/pets");
-        response.data.pets.map((pet) => {
-          pet.images = JSON.parse(pet.images);
-          return pet;
-        });
 
         setPets(response.data.pets); // Atualiza o estado com os pets
       } catch (error) {
