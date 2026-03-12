@@ -21,10 +21,6 @@ function MyAdoptions() {
             Authorization: `Bearer ${JSON.parse(token)}`,
           },
         });
-        response.data.pets.map((pet) => {
-          pet.images = JSON.parse(pet.images);
-          return pet;
-        });
 
         setPets(response.data.pets);
       } catch (error) {
@@ -39,12 +35,13 @@ function MyAdoptions() {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      if (pets.length > 0) {
+      if (pets && pets.length > 0) {
         const ids = pets.map((pet) => pet.ownerId);
         try {
           const userPromises = ids.map((id) => api.get(`/users/${id}`));
           const responseUsers = await Promise.all(userPromises);
-          const data = responseUsers.map((response) => response.data);
+          const data = responseUsers.map((response) => response.data.user);
+          console.log(data);
 
           setUser(data);
         } catch (error) {
@@ -64,10 +61,6 @@ function MyAdoptions() {
             Authorization: `Bearer ${JSON.parse(token)}`,
           },
         });
-        response.data.pets.map((pet) => {
-          pet.images = JSON.parse(pet.images);
-          return pet;
-        });
 
         setAllPets(response.data.pets); // Atualiza o estado com os pets
       } catch (error) {
@@ -86,7 +79,8 @@ function MyAdoptions() {
         <h1>Minhas Adocões</h1>
       </div>
       <div className={styles.petlist_container}>
-        {pets.length > 0 &&
+        {pets &&
+          pets.length > 0 &&
           pets.map(
             (pet) =>
               pet.ownerId !== pet.adopterId && (
@@ -99,36 +93,41 @@ function MyAdoptions() {
 
                   <span className="bold">{pet.name}</span>
                   <div>
-                    {user.length > 0 && user[count].id === pet.ownerId && (
-                      <div className={styles.contacts}>
-                        <p>
-                          Ligue para: <span>{user[count].phone}</span>
-                        </p>
-                        <p>
-                          Ou mande uma mensagem para:{" "}
-                          <span>{user[count].name}</span>
-                        </p>
-                      </div>
-                    )}
-                    {user.length > 0 && user[count].id !== pet.ownerId && (
-                      <div className={styles.contacts}>
-                        <p>
-                          Ligue para: <span>{user[(count += 1)].phone}</span>
-                        </p>
-                        <p>
-                          Ou mande uma mensagem para:{" "}
-                          <span>{user[count].name}</span>
-                        </p>
-                      </div>
-                    )}
+                    {user &&
+                      user.length > 0 &&
+                      user[count].id === pet.ownerId && (
+                        <div className={styles.contacts}>
+                          <p>
+                            Ligue para: <span>{user[count].phone}</span>
+                          </p>
+                          <p>
+                            Ou mande uma mensagem para:{" "}
+                            <span>{user[count].name}</span>
+                          </p>
+                        </div>
+                      )}
+                    {user &&
+                      user.length > 0 &&
+                      user[count].id !== pet.ownerId && (
+                        <div className={styles.contacts}>
+                          <p>
+                            Ligue para: <span>{user[count].phone}</span>
+                          </p>
+                          <p>
+                            Ou mande uma mensagem para:{" "}
+                            <span>{user[count].name}</span>
+                          </p>
+                        </div>
+                      )}
                   </div>
                   <div className={styles.actions}>
                     {pet.available && <p>Adoção em andamento</p>}
                   </div>
                 </div>
-              )
+              ),
           )}
-        {allpets.length > 0 &&
+        {allpets &&
+          allpets.length > 0 &&
           allpets.map(
             (allpet) =>
               !allpet.available && (
@@ -143,18 +142,19 @@ function MyAdoptions() {
                     <p>Adocão concluida!</p>
                   </div>
                 </div>
-              )
+              ),
           )}
 
-        {pets.length === 0 && (
-          <div className={styles.adotar}>
-            <p>
-              Todas as adoções foram concluídas ou ainda não foram feitas. Adote
-              um pet !
-            </p>
-            <button onClick={() => navigate("/")}>Adotar</button>
-          </div>
-        )}
+        {!pets ||
+          (pets.length === 0 && (
+            <div className={styles.adotar}>
+              <p>
+                Todas as adoções foram concluídas ou ainda não foram feitas.
+                Adote um pet!
+              </p>
+              <button onClick={() => navigate("/")}>Adotar</button>
+            </div>
+          ))}
       </div>
     </section>
   );
