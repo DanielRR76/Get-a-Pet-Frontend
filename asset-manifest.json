@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Get-a-Pet-Frontend/static/css/main.94f61596.css",
-    "main.js": "/Get-a-Pet-Frontend/static/js/main.4a3f1194.js",
+    "main.js": "/Get-a-Pet-Frontend/static/js/main.e79bdffa.js",
     "static/media/brightness.png": "/Get-a-Pet-Frontend/static/media/brightness.f38abd4b4bcc934ca10a.png",
     "index.html": "/Get-a-Pet-Frontend/index.html",
     "main.94f61596.css.map": "/Get-a-Pet-Frontend/static/css/main.94f61596.css.map",
-    "main.4a3f1194.js.map": "/Get-a-Pet-Frontend/static/js/main.4a3f1194.js.map"
+    "main.e79bdffa.js.map": "/Get-a-Pet-Frontend/static/js/main.e79bdffa.js.map"
   },
   "entrypoints": [
     "static/css/main.94f61596.css",
-    "static/js/main.4a3f1194.js"
+    "static/js/main.e79bdffa.js"
   ]
 }
