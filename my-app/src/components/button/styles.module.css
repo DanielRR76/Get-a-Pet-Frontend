@@ -1,0 +1,24 @@
+.button {
+  border: 0px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+.left {
+  flex-direction: row-reverse;
+
+  div {
+    margin-right: 0.5rem;
+  }
+}
+.right {
+  flex-direction: row;
+
+  div {
+    margin-left: 0.5rem;
+  }
+}

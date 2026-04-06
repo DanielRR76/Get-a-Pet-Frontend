@@ -1,0 +1,12 @@
+.footer {
+  flex-grow: 1;
+  display: flex;
+  background-color: var(--primary-dark);
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-top 0.3s ease;
+  border: 1px solid var(--secondary);
+}

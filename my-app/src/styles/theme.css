@@ -1,0 +1,19 @@
+:root {
+  --primary: #eeff00;
+  --primary-dark: #ffd400;
+  --secondary: #16479d;
+  --text: #16479d;
+  --text-black: #000;
+  --text-white: #fff;
+  --bg: #fff;
+  --success: #22c55e;
+  --success-dark: #19793a;
+  --info: #0ea5e9;
+  --warning: #eab308;
+  --danger: #991b1b;
+  --disabled: #9c9b9b;
+  --transparent: transparent;
+
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+}
