@@ -1,0 +1,27 @@
+:root {
+  --primary: #ffd400;
+  --secondary: #16479d;
+  --text: #16479d;
+  --bg: #fff;
+  --gray: #e0e0e0;
+  --gray-light: #f4f4f4;
+  --success: #22c55e;
+  --success-dark: #19793a;
+  --info: #0ea5e9;
+  --warning: #eab308;
+  --danger: #991b1b;
+  --disabled: #9c9b9b;
+  --transparent: transparent;
+
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+}
+
+:root[data-theme="dark"] {
+  --primary: #ffdb27;
+  --secondary: #4072c8;
+  --text: #4072c8;
+  --bg: #000000;
+  --gray: #303030;
+  --gray-light: #181818;
+}

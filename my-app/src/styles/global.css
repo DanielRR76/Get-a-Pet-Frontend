@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+body {
+  font-size: 1rem;
+  font-family: var(--sans);
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: 150%;
+  }
+}
+
+@media (min-width: 2560px) {
+  html {
+    font-size: 200%;
+  }
+}
+@media (min-width: 3840px) {
+  html {
+    font-size: 250%;
+  }
+}

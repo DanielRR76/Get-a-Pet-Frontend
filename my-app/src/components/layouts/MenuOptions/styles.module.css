@@ -1,0 +1,11 @@
+.menu {
+  /* border: 1px solid red; */
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  padding: 0 0.625rem;
+}
+
+.menu > * + * {
+  margin-left: 0.625rem;
+}
