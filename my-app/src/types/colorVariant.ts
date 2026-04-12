@@ -1,6 +1,5 @@
 export type ColorVariant =
   | "primary"
-  | "primary-dark"
   | "secondary"
   | "success"
   | "success-dark"
@@ -9,6 +8,4 @@ export type ColorVariant =
   | "info"
   | "disabled"
   | "transparent"
-  | "text"
-  | "text-black"
-  | "text-white";
+  | "text";
