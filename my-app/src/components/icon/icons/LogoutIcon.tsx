@@ -1,20 +1,20 @@
-export function LoginIcon() {
+export function LogoutIcon() {
   return {
-    name: "login" as const,
+    name: "logout" as const,
     svg: (
       <svg
-        xmlns="http://www.w3.org/2000/svg"
         width="100%"
         height="90%"
         viewBox="0 0 24 24"
         fill="none"
+        xmlns="http://www.w3.org/2000/svg"
         style={{ marginLeft: "-0.2rem" }}
-        aria-label="Entrar na conta"
+        aria-label="Sair da conta"
       >
-        <title>Entrar na conta</title>
+        <title>Sair da conta</title>
 
         <path
-          d="M2.00098 11.999L16.001 11.999M16.001 11.999L12.501 8.99902M16.001 11.999L12.501 14.999"
+          d="M15 12L2 12M2 12L5.5 9M2 12L5.5 15"
           stroke="CurrentColor"
           strokeWidth="1.5"
           strokeLinecap="round"

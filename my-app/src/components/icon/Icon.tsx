@@ -1,18 +1,44 @@
 import type { ColorVariant } from "../../types/colorVariant";
 import type { SizeVariant } from "../../types/sizeVariant";
-import { mappedIcons } from "./mappedIcons";
 import styles from "./styles.module.css";
-export interface IconProps {
+import * as icons from "./icons";
+
+interface IconDefinition {
   name: string;
+  svg: React.ReactNode;
+}
+
+const iconMap: Record<string, () => IconDefinition> = {};
+
+Object.values(icons).forEach((iconFn) => {
+  if (typeof iconFn === "function") {
+    const { name } = iconFn();
+    iconMap[name] = iconFn;
+  }
+});
+
+type IconFunctions = typeof icons;
+type IconName = ReturnType<IconFunctions[keyof IconFunctions]>["name"];
+
+export interface IconProps {
+  name: IconName;
   size?: SizeVariant;
   color?: ColorVariant;
 }
+
 export function Icon({ name, size = "medium", color }: IconProps) {
-  const icon = mappedIcons.find((icon) => icon.name === name);
-  if (!icon) return null;
+  const iconFn = iconMap[name];
+
+  if (!iconFn) {
+    console.error(`Icon name "${name}" not found.`);
+    return null;
+  }
+
+  const { svg } = iconFn();
+
   return (
     <div className={styles[size]} style={{ color: `var(--${color})` }}>
-      {icon.svg}
+      {svg}
     </div>
   );
 }
