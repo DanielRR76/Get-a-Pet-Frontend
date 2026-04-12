@@ -1,1 +1,7 @@
-export type SizeVariant = "small" | "medium" | "large" | "xlarge" | "huge";
+export type SizeVariant =
+  | "small"
+  | "base"
+  | "medium"
+  | "large"
+  | "xlarge"
+  | "huge";
