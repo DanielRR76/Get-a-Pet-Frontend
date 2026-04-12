@@ -1,17 +1,20 @@
 .small {
-  font-size: small;
+  font-size: 0.75rem;
+}
+.base {
+  font-size: 1rem;
 }
 
 .medium {
-  font-size: medium;
+  font-size: 1.25rem;
 }
 
 .large {
-  font-size: large;
+  font-size: 1.5rem;
 }
 .xlarge {
-  font-size: x-large;
+  font-size: 1.75rem;
 }
 .huge {
-  font-size: xx-large;
+  font-size: 2rem;
 }
