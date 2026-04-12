@@ -1,24 +1,44 @@
 .button {
-  border: 0px solid red;
+  /* border: 0px solid red; */
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0.3rem;
+  /* background-color: transparent; */
 
   &:hover {
     cursor: pointer;
   }
 }
+.iconOnly {
+  flex-direction: row;
+}
 .left {
   flex-direction: row-reverse;
 
   div {
-    margin-right: 0.5rem;
+    margin-right: 0.313rem;
   }
 }
 .right {
   flex-direction: row;
 
   div {
-    margin-left: 0.5rem;
+    margin-left: 0.313rem;
   }
+}
+
+.none {
+  border: 0.125rem solid transparent;
+  &:hover {
+    cursor: pointer;
+    border: 0.125rem solid var(--secondary);
+    transition: border 0.3s ease;
+  }
+}
+.thin {
+  border: 0.125rem solid var(--secondary);
+}
+.thick {
+  border: 0.25rem solid var(--secondary);
 }
