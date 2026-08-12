@@ -6,9 +6,13 @@ import type {
   ComponentSizing,
   RadiusVariant,
 } from "../../types";
-import { Icon, type IconProps } from "../Icon/Icon";
+import {
+  Icon,
+  Typography,
+  type IconProps,
+  type TypographyElement,
+} from "../index";
 import styles from "./styles.module.css";
-import { Typography, type TypographyElement } from "../Typography";
 import { RADIUS_SIZE } from "../../constants";
 import { getHeight, getWidth } from "../../utils/measure";
 
