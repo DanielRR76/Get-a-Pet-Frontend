@@ -1,27 +1,24 @@
 :root {
-  --primary: #ffd400;
-  --secondary: #16479d;
-  --text: #16479d;
+  --primary: #ffe600;
+  --dark: #000000;
+  --secondary: #0000ff;
   --bg: #fff;
   --gray: #e0e0e0;
   --gray-light: #f4f4f4;
   --success: #22c55e;
-  --success-dark: #19793a;
-  --info: #0ea5e9;
+  --success-light: #4ade80;
+  --success-dark: #008000;
+  --info: #38bdf8;
   --warning: #eab308;
-  --danger: #991b1b;
-  --disabled: #9c9b9b;
+  --danger: #b91c1c;
+  --danger-light: #f87171;
+  --disabled: #808080;
+  --disabled-light: #9c9b9b;
   --transparent: transparent;
-
-  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
 }
 
 :root[data-theme="dark"] {
-  --primary: #ffdb27;
-  --secondary: #4072c8;
-  --text: #4072c8;
   --bg: #000000;
-  --gray: #303030;
-  --gray-light: #181818;
+  --gray: #181818;
+  --gray-light: #303030;
 }
