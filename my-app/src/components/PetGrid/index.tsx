@@ -1,83 +1,132 @@
 import styles from "./styles.module.css";
-import petTest from "../../assets/petTest3.jpg";
-import { Typography } from "../Typography";
-import { Button } from "../Button";
+import petTest from "../../assets/petTest.jpg";
+import petTest2 from "../../assets/petTest2.jpg";
+import petTest3 from "../../assets/petTest3.jpg";
+import { Typography, Button, Image } from "../index";
 export const PetGrid = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.card}>
-        <img src={petTest} alt="Pet Test" className={styles.image} />
+      <div className={`${styles.card} flex_align_center`}>
+        <Image
+          src={petTest2}
+          alt="Pet Test"
+          radius="small"
+          aspectRatio={{ width: 1, height: 1 }}
+        />
         <Typography
+          color="inherit"
           size="medium"
           align="center"
           variant="h2"
           text="Pequetita"
         />
-        <Typography size="base" align="center" variant="p" text="Peso: 5kg" />
-        <div style={{ display: "flex", justifyContent: "center" }}>
+        <Typography
+          color="inherit"
+          size="base"
+          align="center"
+          variant="p"
+          text="Peso: 5kg"
+        />
+        <div className={styles.details_wrapper}>
           <Button
-            color="primary"
+            color="disabled"
             width="8rem"
             height="2rem"
             radius="large"
-            text={<Typography text="Detalhes" />}
+            text={<Typography color="inherit" text="Detalhes" />}
           />
         </div>
       </div>
-      <div className={styles.card}>
-        <img src={petTest} alt="Pet Test" className={styles.image} />
+      <div className={`${styles.card} flex_align_center`}>
+        <Image
+          src={petTest3}
+          alt="Pet Test"
+          radius="small"
+          aspectRatio={{ width: 1, height: 1 }}
+        />
         <Typography
+          color="inherit"
           size="medium"
           align="center"
           variant="h2"
           text="Pequetita"
         />
-        <Typography size="base" align="center" variant="p" text="Peso: 5kg" />
-        <div style={{ display: "flex", justifyContent: "center" }}>
+        <Typography
+          color="inherit"
+          size="base"
+          align="center"
+          variant="p"
+          text="Peso: 5kg"
+        />
+        <div className={styles.details_wrapper}>
           <Button
             color="primary"
             width="8rem"
             height="2rem"
             radius="large"
-            text={<Typography text="Detalhes" />}
+            text={<Typography color="inherit" text="Detalhes" />}
           />
         </div>
       </div>
-      <div className={styles.card}>
-        <img src={petTest} alt="Pet Test" className={styles.image} />
+      <div className={`${styles.card} flex_align_center`}>
+        <Image
+          src={petTest}
+          alt="Pet Test"
+          radius="small"
+          aspectRatio={{ width: 1, height: 1 }}
+        />
         <Typography
+          color="inherit"
           size="medium"
           align="center"
           variant="h2"
           text="Pequetita"
         />
-        <Typography size="base" align="center" variant="p" text="Peso: 5kg" />
-        <div style={{ display: "flex", justifyContent: "center" }}>
+        <Typography
+          color="inherit"
+          size="base"
+          align="center"
+          variant="p"
+          text="Peso: 5kg"
+        />
+        <div className={styles.details_wrapper}>
           <Button
             color="primary"
             width="8rem"
             height="2rem"
             radius="large"
-            text={<Typography text="Detalhes" />}
+            text={<Typography color="inherit" text="Detalhes" />}
           />
         </div>
       </div>
-      <div className={styles.card}>
-        <img src={petTest} alt="Pet Test" className={styles.image} />
+      <div className={`${styles.card} flex_align_center`}>
+        <Image
+          src={petTest}
+          alt="Pet Test"
+          radius="small"
+          aspectRatio={{ width: 1, height: 1 }}
+        />
         <Typography
+          color="inherit"
           size="medium"
           align="center"
           variant="h2"
           text="Pequetita"
         />
-        <Typography size="base" align="center" variant="p" text="Peso: 5kg" />
-        <div style={{ display: "flex", justifyContent: "center" }}>
+        <Typography
+          color="inherit"
+          size="base"
+          align="center"
+          variant="p"
+          text="Peso: 5kg"
+        />
+        <div className={styles.details_wrapper}>
           <Button
             color="primary"
             width="8rem"
             height="2rem"
             radius="large"
-            text={<Typography text="Detalhes" />}
+            text={<Typography color="inherit" text="Detalhes" />}
           />
         </div>
       </div>

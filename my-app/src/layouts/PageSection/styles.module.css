@@ -1,0 +1,8 @@
+.body_header {
+  margin-top: var(--base);
+  margin-bottom: var(--base);
+}
+
+.body_header > * + * {
+  margin-top: var(--base);
+}
