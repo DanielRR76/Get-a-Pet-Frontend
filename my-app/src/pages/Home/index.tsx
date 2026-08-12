@@ -1,25 +1,12 @@
-import { PetGrid } from "../../components/PetGrid";
-import { Typography } from "../../components/Typography";
-import styles from "./styles.module.css";
+import { PetGrid } from "../../components";
+import { PageSection } from "../../layouts";
 export function Home() {
   return (
-    <>
-      <header className={styles.home_header}>
-        <Typography
-          size="xlarge"
-          align="center"
-          variant="h1"
-          text="Adote um Pet"
-        />
-        <Typography
-          size="medium"
-          align="center"
-          variant="p"
-          text="Veja os detalhes de cada pet e conheça seus tutores."
-        />
-      </header>
-
+    <PageSection
+      title="Adote um Pet"
+      subtitle="Veja os detalhes de cada pet e conheça seus tutores."
+    >
       <PetGrid />
-    </>
+    </PageSection>
   );
 }

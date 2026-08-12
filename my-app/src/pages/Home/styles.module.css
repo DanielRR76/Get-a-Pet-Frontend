@@ -1,7 +1,0 @@
-.home_header {
-  margin-top: 1rem;
-}
-
-.home_header > * + * {
-  margin-top: 0.5rem;
-}
