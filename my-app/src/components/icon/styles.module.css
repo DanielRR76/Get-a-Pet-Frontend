@@ -1,24 +1,24 @@
 .small {
-  width: 0.75rem;
-  height: 0.75rem;
+  width: var(--large-small);
+  height: var(--large-small);
 }
 .base {
-  width: 1rem;
-  height: 1rem;
+  width: var(--base);
+  height: var(--base);
 }
 .medium {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: var(--large-medium);
+  height: var(--large-medium);
 }
 .large {
-  width: 2rem;
-  height: 2rem;
+  width: var(--x-large);
+  height: var(--x-large);
 }
 .xlarge {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: var(--xx-large);
+  height: var(--xx-large);
 }
 .huge {
-  width: 3rem;
-  height: 3rem;
+  width: var(--xxx-large);
+  height: var(--xxx-large);
 }

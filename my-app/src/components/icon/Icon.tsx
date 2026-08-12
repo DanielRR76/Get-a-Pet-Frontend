@@ -1,5 +1,4 @@
-import type { ColorVariant } from "../../types/colorVariant";
-import type { SizeVariant } from "../../types/sizeVariant";
+import type { ColorVariant, SizeVariant } from "../../types";
 import styles from "./styles.module.css";
 import * as icons from "./icons";
 

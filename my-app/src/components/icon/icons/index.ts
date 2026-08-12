@@ -1,4 +1,5 @@
-export { GetAPetLogo } from "./GetAPetLogo";
+export { ClikPetsWithTextLogo } from "./ClikPetsWithTextLogo";
+export { ClikPetsLogo } from "./ClikPetsLogo";
 export { LoginIcon } from "./LoginIcon";
 export { MoonIcon } from "./MoonIcon";
 export { SunIcon } from "./SunIcon";
