@@ -11,7 +11,12 @@ body {
   font-size: 1rem;
   font-family: var(--sans);
   background-color: var(--bg);
-  color: var(--text);
+  color: var(--dark);
+}
+:root[data-theme="dark"] {
+  body {
+    color: var(--primary);
+  }
 }
 
 @media (min-width: 1920px) {
@@ -29,4 +34,21 @@ body {
   html {
     font-size: 250%;
   }
+}
+
+:root {
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+  --xx-small: 0.125rem;
+  --x-small: 0.25rem;
+  --small: 0.5rem;
+  --large-small: 0.75rem;
+  --base: 1rem;
+  --medium: 1.25rem;
+  --large-medium: 1.5rem;
+  --large: 1.75rem;
+  --x-large: 2rem;
+  --xx-large: 2.5rem;
+  --xxx-large: 3rem;
+  --full: 100%;
 }

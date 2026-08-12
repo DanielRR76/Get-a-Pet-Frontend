@@ -1,0 +1,29 @@
+.thin {
+  border: var(--xx-small) solid;
+}
+.thick {
+  border: var(--x-small) solid;
+}
+
+.flex_column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex_align_center {
+  display: flex;
+  align-items: center;
+}
+
+.form_background {
+  padding: var(--base);
+  border: var(--xx-small) solid var(--gray);
+  background-color: var(--gray-light);
+  border-radius: var(--x-small);
+}
+:root[data-theme="dark"] {
+  .form_background {
+    border: var(--xx-small) solid var(--gray-light);
+    background-color: var(--gray);
+  }
+}

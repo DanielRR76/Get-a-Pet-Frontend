@@ -1,23 +1,32 @@
-import { isValidElement } from "react";
-import type { ColorVariant } from "../../types/colorVariant";
+import { cloneElement, isValidElement } from "react";
+import type {
+  AlignVariant,
+  BorderThickness,
+  ColorVariant,
+  ComponentSizing,
+  RadiusVariant,
+} from "../../types";
 import { Icon, type IconProps } from "../Icon/Icon";
 import styles from "./styles.module.css";
-import { Typography, type TypographyProps } from "../Typography";
+import { Typography, type TypographyElement } from "../Typography";
+import { RADIUS_SIZE } from "../../constants";
+import { getHeight, getWidth } from "../../utils/measure";
 
-type IconPosition = "left" | "right";
-interface ButtonProps {
-  text?: React.ReactElement<TypographyProps>;
+export type ButtonColor = Exclude<
+  ColorVariant,
+  "secondary" | "dark" | "success"
+>;
+
+export type ButtonProps = {
+  text?: TypographyElement;
   icon?: React.ReactElement<IconProps>;
-  iconPosition?: IconPosition;
-  /** The only supported unit of measurement is `rem` */
-  width?: string;
-  /** The only supported unit of measurement is `rem` */
-  height?: string;
-  color?: ColorVariant;
-  radius?: "none" | "small" | "medium" | "large" | "x-large" | "full";
-  border?: "none" | "thin" | "thick";
+  iconPosition?: Exclude<AlignVariant, "center">;
+  color?: ButtonColor;
+  radius?: RadiusVariant;
+  border?: BorderThickness;
+  type?: "button" | "submit" | "reset";
   onClick?: () => void;
-}
+} & ComponentSizing;
 
 export function Button({
   text,
@@ -25,52 +34,33 @@ export function Button({
   iconPosition = "left",
   width,
   height,
-  color,
+  color = "primary",
   radius = "none",
   border = "thin",
+  type = "button",
   onClick,
 }: ButtonProps) {
   const isIconElement = isValidElement(icon) && icon.type === Icon;
   const isTextElement = isValidElement(text) && text.type === Typography;
   const isJustIcon = isIconElement && !isTextElement ? "iconOnly" : null;
-  const getWidth = () => {
-    if (width?.includes("rem")) return width;
-    return "fit-content";
-  };
-  const getHeight = () => {
-    if (height?.includes("rem")) return height;
-    return "fit-content";
-  };
-  const getRadius = () => {
-    switch (radius) {
-      case "none":
-        return "0";
-      case "small":
-        return "0.25rem";
-      case "medium":
-        return "0.5rem";
-      case "large":
-        return "0.75rem";
-      case "x-large":
-        return "1rem";
-      case "full":
-        return "100%";
-      default:
-        return "0";
-    }
-  };
+  if (!isTextElement && !isIconElement) {
+    console.warn(
+      "Button component requires at least one of the following props: 'text' or 'icon'.",
+    );
+    return;
+  }
   return (
     <button
-      className={`${styles.button} ${styles[border]} ${styles[isJustIcon ?? iconPosition]}`}
+      type={type}
+      className={`flex_align_center ${styles.button} ${styles[color]} ${border} ${styles[isJustIcon ?? iconPosition]}`}
       style={{
-        width: getWidth(),
-        height: getHeight(),
-        backgroundColor: `var(--${color})`,
-        borderRadius: getRadius(),
+        width: getWidth(width),
+        height: getHeight(height),
+        borderRadius: RADIUS_SIZE[radius],
       }}
       onClick={onClick}
     >
-      {isTextElement && text}
+      {isTextElement && cloneElement(text, { color: "inherit" })}
       {isIconElement && icon}
     </button>
   );
