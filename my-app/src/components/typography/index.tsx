@@ -1,19 +1,18 @@
-import type { AlignVariant } from "../../types/alignVariant";
-import type { ColorVariant } from "../../types/colorVariant";
-import type { SizeVariant } from "../../types/sizeVariant";
+import type { AlignVariant, ColorVariant, SizeVariant } from "../../types";
 import styles from "./styles.module.css";
 
 export interface TypographyProps {
   text: string;
   variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
-  color?: ColorVariant;
+  color?: ColorVariant | "inherit";
   size?: SizeVariant;
   align?: AlignVariant;
 }
+export type TypographyElement = React.ReactElement<TypographyProps>;
 export function Typography({
   text,
   variant = "p",
-  color = "text",
+  color = "inherit",
   size = "medium",
   align = "left",
 }: TypographyProps) {
@@ -21,7 +20,10 @@ export function Typography({
   return (
     <Tag
       className={styles[size]}
-      style={{ color: `var(--${color})`, textAlign: align }}
+      style={{
+        color: color === "inherit" ? "inherit" : `var(--${color})`,
+        textAlign: align,
+      }}
     >
       {text}
     </Tag>
