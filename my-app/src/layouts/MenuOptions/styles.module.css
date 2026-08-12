@@ -1,0 +1,58 @@
+.phoneMenu,
+.notPhoneMenu {
+  align-items: center;
+}
+
+.notPhoneMenu > * + * {
+  margin-left: var(--small);
+}
+
+@media (min-width: 768px) {
+  .phoneMenu {
+    display: none;
+  }
+
+  .notPhoneMenu {
+    display: flex;
+  }
+}
+
+@media (max-width: 767px) {
+  .phoneMenu {
+    display: flex;
+    position: relative;
+  }
+
+  .notPhoneMenu {
+    display: none;
+  }
+}
+
+.menu {
+  background-color: var(--primary);
+  border: var(--x-small) solid var(--secondary);
+  position: absolute;
+  top: 3rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: max-content;
+  border-radius: var(--small);
+  padding: var(--small);
+}
+
+.menu div {
+  display: flex;
+  align-items: center;
+  padding: var(--x-small);
+  border-radius: var(--x-small);
+
+  & > * + * {
+    margin-left: var(--small);
+  }
+  &:hover {
+    background-color: var(--secondary);
+    color: var(--primary);
+  }
+}
