@@ -8,5 +8,6 @@ export * from "./Image";
 export * from "./Input";
 export * from "./Logo";
 export * from "./PetGrid";
+export * from "./RouterLink";
 export * from "./Select";
 export * from "./Typography";

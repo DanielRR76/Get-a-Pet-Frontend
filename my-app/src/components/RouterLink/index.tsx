@@ -1,0 +1,16 @@
+import { Link } from "react-router";
+import styles from "./styles.module.css";
+
+type RouterLinkProps = { href: string } & React.ComponentProps<"a">;
+
+export default function RouterLink({
+  href,
+  children,
+  ...props
+}: RouterLinkProps) {
+  return (
+    <Link className={styles.link} to={href} {...props}>
+      {children}
+    </Link>
+  );
+}

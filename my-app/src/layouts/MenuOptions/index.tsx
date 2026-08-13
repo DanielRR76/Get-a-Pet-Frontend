@@ -1,4 +1,6 @@
 import { Button, Icon, Typography } from "../../components";
+import RouterLink from "../../components/RouterLink";
+import { PATH } from "../../router/routes";
 import styles from "./styles.module.css";
 import { useEffect, useState } from "react";
 
@@ -34,30 +36,38 @@ export function MenuOptions() {
           radius="small"
         />
         <>
-          <Button
-            icon={<Icon name="myPets" size="xlarge" />}
-            color="transparent"
-            border="thin"
-            radius="small"
-          />
-          <Button
-            icon={<Icon name="myAdoptions" size="xlarge" />}
-            color="transparent"
-            border="thin"
-            radius="small"
-          />
-          <Button
-            icon={<Icon name="profile" size="xlarge" />}
-            color="transparent"
-            border="thin"
-            radius="small"
-          />
-          <Button
-            icon={<Icon name="login" size="xlarge" />}
-            color="transparent"
-            border="thin"
-            radius="small"
-          />
+          <RouterLink href={PATH.MY_PETS}>
+            <Button
+              icon={<Icon name="myPets" size="xlarge" />}
+              color="transparent"
+              border="thin"
+              radius="small"
+            />
+          </RouterLink>
+          <RouterLink href={PATH.MY_ADOPTIONS}>
+            <Button
+              icon={<Icon name="myAdoptions" size="xlarge" />}
+              color="transparent"
+              border="thin"
+              radius="small"
+            />
+          </RouterLink>
+          <RouterLink href={PATH.PROFILE}>
+            <Button
+              icon={<Icon name="profile" size="xlarge" />}
+              color="transparent"
+              border="thin"
+              radius="small"
+            />
+          </RouterLink>
+          <RouterLink href={PATH.LOGIN}>
+            <Button
+              icon={<Icon name="login" size="xlarge" />}
+              color="transparent"
+              border="thin"
+              radius="small"
+            />
+          </RouterLink>
         </>
       </div>
       <div className={styles.phoneMenu}>
@@ -68,26 +78,34 @@ export function MenuOptions() {
           radius="small"
         />
         <div className={styles.menu}>
-          <div>
+          <div onClick={toggleTheme}>
             {IconTheme[theme]}
             <Typography text="Tema" size="base" color="inherit" />
           </div>
-          <div>
-            <Icon name="myPets" size="xlarge" />
-            <Typography text="Meus pets" size="base" color="inherit" />
-          </div>
-          <div>
-            <Icon name="myAdoptions" size="xlarge" />
-            <Typography text="Minhas adoções" size="base" color="inherit" />
-          </div>
-          <div>
-            <Icon name="profile" size="xlarge" />
-            <Typography text="Perfil" size="base" color="inherit" />
-          </div>
-          <div>
-            <Icon name="login" size="xlarge" />
-            <Typography text="Login" size="base" color="inherit" />
-          </div>
+          <RouterLink href={PATH.MY_PETS}>
+            <div>
+              <Icon name="myPets" size="xlarge" />
+              <Typography text="Meus pets" size="base" color="inherit" />
+            </div>
+          </RouterLink>
+          <RouterLink href={PATH.MY_ADOPTIONS}>
+            <div>
+              <Icon name="myAdoptions" size="xlarge" />
+              <Typography text="Minhas adoções" size="base" color="inherit" />
+            </div>
+          </RouterLink>
+          <RouterLink href={PATH.PROFILE}>
+            <div>
+              <Icon name="profile" size="xlarge" />
+              <Typography text="Perfil" size="base" color="inherit" />
+            </div>
+          </RouterLink>
+          <RouterLink href={PATH.LOGIN}>
+            <div>
+              <Icon name="login" size="xlarge" />
+              <Typography text="Login" size="base" color="inherit" />
+            </div>
+          </RouterLink>
         </div>
       </div>
     </>
