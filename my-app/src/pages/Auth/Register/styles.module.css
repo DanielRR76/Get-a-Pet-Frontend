@@ -1,0 +1,8 @@
+.login_container {
+  margin-top: var(--small);
+  flex-direction: column;
+}
+
+.login_container > * + * {
+  margin-top: var(--small);
+}
