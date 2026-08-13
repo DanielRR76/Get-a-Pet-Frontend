@@ -1,0 +1,47 @@
+import { Button } from "../../../components/Button";
+import { Form } from "../../../components/forms";
+import { Input } from "../../../components/Input";
+import { Typography } from "../../../components/Typography";
+import { PageSection } from "../../../layouts/PageSection";
+import loginStyles from "./styles.module.css";
+export function Login() {
+  return (
+    <PageSection title="Login">
+      <div className="form_background">
+        <Form onSubmit={() => console.log("teste")}>
+          <Input
+            width="100%"
+            label="Email"
+            type="email"
+            name="email"
+            placeholder="Digite seu email"
+          />
+
+          <Input
+            width="100%"
+            label="Senha"
+            type="password"
+            name="password"
+            placeholder="Digite sua senha"
+          />
+
+          <Button
+            type="submit"
+            radius="medium"
+            width="100%"
+            text={<Typography size="medium" text="Login" />}
+          />
+        </Form>
+        <div className={`${loginStyles.register_container} flex_align_center`}>
+          <Typography size="small" text="Não tem uma conta?" />
+          <Button
+            type="button"
+            color="gray"
+            radius="medium"
+            text={<Typography text="Clique aqui" size="small" />}
+          />
+        </div>
+      </div>
+    </PageSection>
+  );
+}

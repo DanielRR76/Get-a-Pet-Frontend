@@ -1,0 +1,8 @@
+.register_container {
+  margin-top: var(--small);
+  flex-direction: column;
+}
+
+.register_container > * + * {
+  margin-top: var(--small);
+}
