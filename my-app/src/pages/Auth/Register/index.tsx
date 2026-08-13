@@ -1,8 +1,10 @@
 import { Button } from "../../../components/Button";
 import { Form } from "../../../components/forms";
 import { Input } from "../../../components/Input";
+import RouterLink from "../../../components/RouterLink";
 import { Typography } from "../../../components/Typography";
 import { PageSection } from "../../../layouts/PageSection";
+import { PATH } from "../../../router/routes";
 import registerStyles from "./styles.module.css";
 export function Register() {
   return (
@@ -58,12 +60,14 @@ export function Register() {
         </Form>
         <div className={`${registerStyles.login_container} flex_align_center`}>
           <Typography size="small" text="Tem uma conta?" />
-          <Button
-            type="button"
-            color="gray"
-            radius="medium"
-            text={<Typography text="Clique aqui" size="small" />}
-          />
+          <RouterLink href={PATH.LOGIN}>
+            <Button
+              type="button"
+              color="gray"
+              radius="medium"
+              text={<Typography text="Clique aqui" size="small" />}
+            />
+          </RouterLink>
         </div>
       </div>
     </PageSection>

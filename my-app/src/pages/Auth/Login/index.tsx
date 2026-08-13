@@ -1,8 +1,10 @@
 import { Button } from "../../../components/Button";
 import { Form } from "../../../components/forms";
 import { Input } from "../../../components/Input";
+import RouterLink from "../../../components/RouterLink";
 import { Typography } from "../../../components/Typography";
 import { PageSection } from "../../../layouts/PageSection";
+import { PATH } from "../../../router/routes";
 import loginStyles from "./styles.module.css";
 export function Login() {
   return (
@@ -34,12 +36,14 @@ export function Login() {
         </Form>
         <div className={`${loginStyles.register_container} flex_align_center`}>
           <Typography size="small" text="Não tem uma conta?" />
-          <Button
-            type="button"
-            color="gray"
-            radius="medium"
-            text={<Typography text="Clique aqui" size="small" />}
-          />
+          <RouterLink href={PATH.REGISTER}>
+            <Button
+              type="button"
+              color="gray"
+              radius="medium"
+              text={<Typography text="Clique aqui" size="small" />}
+            />
+          </RouterLink>
         </div>
       </div>
     </PageSection>

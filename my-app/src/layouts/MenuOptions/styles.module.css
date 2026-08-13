@@ -30,8 +30,9 @@
 
 .menu {
   background-color: var(--primary);
-  border: var(--x-small) solid var(--secondary);
+  border: var(--x-small) solid var(--dark);
   position: absolute;
+  color: var(--dark);
   top: 3rem;
   right: 2rem;
   display: flex;
@@ -52,7 +53,8 @@
     margin-left: var(--small);
   }
   &:hover {
-    background-color: var(--secondary);
+    background-color: var(--dark);
     color: var(--primary);
+    cursor: pointer;
   }
 }
