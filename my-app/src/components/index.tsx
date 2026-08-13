@@ -1,4 +1,6 @@
+export * from "./Badge";
 export * from "./Button";
+export * from "./Carousel";
 export * from "./FileUpload";
 export * from "./forms";
 export * from "./Icon/Icon";

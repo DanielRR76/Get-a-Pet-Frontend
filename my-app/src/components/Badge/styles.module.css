@@ -1,0 +1,31 @@
+.badge {
+  padding: var(--small);
+}
+.secondary {
+  background-color: var(--secondary);
+  color: var(--bg);
+}
+
+.success {
+  background-color: var(--success-dark);
+  color: var(--bg);
+}
+
+:root[data-theme="dark"] {
+  .secondary {
+    background-color: var(--info);
+  }
+
+  .success {
+    background-color: var(--success-light);
+  }
+  .disabled {
+    background-color: var(--disabled-light);
+  }
+}
+
+.disabled {
+  background-color: var(--disabled);
+  color: var(--bg);
+  cursor: not-allowed;
+}
