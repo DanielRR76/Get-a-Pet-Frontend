@@ -1,0 +1,7 @@
+.container {
+  min-height: 80vh;
+  padding: var(--large-small) var(--medium) var(--large);
+  max-height: 100%;
+  flex-direction: column;
+  justify-content: center;
+}

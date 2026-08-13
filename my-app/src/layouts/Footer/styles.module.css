@@ -1,13 +1,12 @@
 .footer {
   flex-grow: 1;
-  display: flex;
+  justify-content: center;
   min-height: 10vh;
   background-color: var(--primary);
-  align-items: center;
-  justify-content: center;
+
   transition:
     background-color 0.3s ease,
     color 0.3s ease,
     border-top 0.3s ease;
-  border-top: 1px solid var(--secondary);
+  border-top: var(--xx-small) solid var(--dark);
 }
