@@ -4,6 +4,7 @@ about: Report a bug to help us improve
 title: "[BUG] "
 labels: bug
 assignees: ""
+projects: ClikPets
 ---
 
 ## Describe the bug
