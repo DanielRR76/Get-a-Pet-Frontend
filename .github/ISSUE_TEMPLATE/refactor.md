@@ -4,6 +4,7 @@ about: Propose a code refactor or technical improvement
 title: "[REFACTOR] "
 labels: refactor
 assignees: ""
+projects: ClikPets
 ---
 
 ## Summary
