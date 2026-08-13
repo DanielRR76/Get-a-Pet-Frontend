@@ -1,0 +1,19 @@
+.register_pet {
+  width: var(--full);
+  justify-content: end;
+  padding: var(--small);
+}
+
+.my_pets_actions > * + * {
+  margin-left: var(--small);
+}
+
+@media (max-width: 500px) {
+  .my_pets_actions {
+    flex-direction: column;
+  }
+  .my_pets_actions > * + * {
+    margin-left: 0;
+    margin-top: var(--small);
+  }
+}
