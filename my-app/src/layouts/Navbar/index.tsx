@@ -1,5 +1,5 @@
-import { Logo } from "../../components/Logo";
-import { MenuOptions } from "../MenuOptions";
+import { Logo } from "../../components";
+import { MenuOptions } from "../index";
 import styles from "./styles.module.css";
 export function Navbar() {
   return (
