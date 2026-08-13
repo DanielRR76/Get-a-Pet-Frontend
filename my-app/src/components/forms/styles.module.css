@@ -1,0 +1,17 @@
+.form_container {
+  min-width: 20rem;
+  flex-direction: column;
+}
+.form_container > * + * {
+  margin-top: var(--small);
+}
+
+.form_container > button {
+  margin-top: var(--base);
+}
+
+@media (max-width: 450px) {
+  .form_container {
+    min-width: 15rem;
+  }
+}
